@@ -1,0 +1,31 @@
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+yabai -m config layout bsp
+
+yabai -m config window_placement second_child
+
+# padding
+yabai -m config window_gap 8
+yabai -m config top_padding 8
+yabai -m config bottom_padding 
+yabai -m config right_padding 8
+yabai -m config left_padding 8
+
+# mouse settings
+yabai -m config mouse_follows_focus off
+yabai -m config mouse_modifier alt
+# left click and drag
+yabai -m config mouse_action1 move
+# right click and drag
+yabai -m config mouse_action2 resize
+yabai -m config mouse_drop_action swap
+
+# prevent management
+yabai -m rule --add app="^System Settings$" manage=off
+# yabai -m rule --add app="^Discord$" manage=off
+yabai -m rule --add app="^Python$" manage=off
+yabai -m rule --add app="^Photo Booth$" manage=off
+
+# sketchybar
+yabai -m config external_bar all:32:0
